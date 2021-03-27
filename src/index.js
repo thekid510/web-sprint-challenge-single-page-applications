@@ -5,6 +5,7 @@ import { render} from "react-dom";
 
 import "./index.css";
 import App from "./pages/App";
+
 worker.start()
 
 render(<App />, document.getElementById("root"));

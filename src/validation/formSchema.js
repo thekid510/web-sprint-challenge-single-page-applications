@@ -6,7 +6,10 @@ export default yup.object().shape({
     .required("name is required")
     .min(2, "name must be 2 chars long"),
   size: yup.string().oneOf(["personal","small", "medium","large"], "size is required"),
-
+  instructions: yup
+    .string()
+    .required("")
+    .min(0,"optional"),
   pepperoni: yup.boolean(),
   mushroom: yup.boolean(),
   onions: yup.boolean(),

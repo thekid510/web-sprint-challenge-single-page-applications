@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../index.css"
 export default function PizzaForm(props) {
 const {values, submit, change, disabled, errors} = props;
 
@@ -16,7 +16,7 @@ const onChange = (evt) => {
 return (
 <form className="form container" onSubmit={onSubmit}>
   <div className ="form-group submit">
-    <button disabled ={disabled}>submit</button>
+    <button disabled ={disabled}>Order</button>
     <div className = "errors">
       <div>{errors.name}</div>
       <div>{errors.size}</div>
@@ -26,17 +26,9 @@ return (
  </div>
  <div className = "form-group inputs">
     <h4> General info </h4>
-    <label>
-    Special Instructions
-    <input
-        value={values.instructions}
-        onChange={onChange}
-        name="instructions"
-        type="text"
-        />
- </label>
+ 
  <label>
-    Name
+    Name 
     <input
         value={values.name}
         onChange={onChange}
@@ -44,6 +36,7 @@ return (
         type="text"
         />
  </label>
+ 
  <label>
     Size
     <select onChange={onChange}value={values.size} name="size">
@@ -93,7 +86,17 @@ return (
             onChange={onChange}
           />
         </label>
+        
     </div>
+    <label>
+    Special Instructions
+    <input
+        value={values.instructions}
+        onChange={onChange}
+        name="instructions"
+        type="text"
+        />
+ </label>
  </form>
 );
 }
