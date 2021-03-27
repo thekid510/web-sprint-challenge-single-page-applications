@@ -1,11 +1,10 @@
-import { worker } from './axios/browser'
 
 import React from "react";
 import { render} from "react-dom";
 
+
 import "./index.css";
 import App from "./pages/App";
+import { BrowserRouter as Router } from "react-router-dom";
 
-worker.start()
-
-render(<App />, document.getElementById("root"));
+render(<Router> <App /> </Router>, document.getElementById("root"));

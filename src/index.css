@@ -32,7 +32,7 @@ body {
   display: flex;
   align-items: baseline;
 }
-@media (max-width: 650px) {
+@media (min-width: 650px) {
   .container.form {
     flex-direction: column;
 
@@ -106,6 +106,9 @@ button:disabled {
   display: block;
   margin-top: 4px;
 }
-label.Name{
-  padding: 10px;
+.container nav a{
+  margin: 2%;
+  font-size: 20px;
+  color: navy ;
+  text-decoration: none;
 }

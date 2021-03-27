@@ -1,10 +1,9 @@
 import { v4 as uuid } from 'uuid'
 import { rest } from 'msw'
 
-// 👉 the shape of the list of Pizzas from API
 const pizzas = [
   {
-    id: uuid(), // uuid is a lib to generate random, unique ids
+    id: uuid(), 
     name: 'Michael',
     instructions: 'michael@michael.com',
     size: 'Medium',
@@ -51,8 +50,8 @@ function getAllPizzas(req, res, ctx) {
   }
   
   export const handlers = [
-    rest.get('https://reqres.in/pizzas', getAllPizzas),
-    rest.post('https://reqres.in/pizzas', createNewPizza),
+    rest.get('https://reqres.in/', getAllPizzas),
+    rest.post('https://reqres.in/', createNewPizza),
   ]
   
 

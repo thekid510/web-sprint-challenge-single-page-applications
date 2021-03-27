@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Pizza from "./pizza"
+import { Route, Link, Switch } from "react-router-dom";
 import PizzaForm from "./form"
 import schema from "../validation/formSchema";
 import axios from "axios";
 import * as yup from "yup";
-
+import Home from "../home"
 const initialFormValues ={
 
   name:"",
@@ -34,7 +34,7 @@ export default function App() {
   const getPizzas = () => {
   
     axios
-      .get("https://reqres.in/pizzas")
+      .get("https://reqres.in/")
       .then((res) => {
         setPizzas(res.data);
       })
@@ -46,7 +46,7 @@ export default function App() {
   const postNewPizza = (newPizza) => {
     
     axios
-      .post("https://reqres.in/pizzas", newPizza)
+      .post("https://reqres.in/")
       .then((res) => {
         setPizzas([res.data, ...pizzas]);
         setFormValues(initialFormValues);
@@ -107,7 +107,12 @@ export default function App() {
       <header>
         <h1>Pizza App</h1>
       </header>
-
+      <nav>
+        {}
+      <Link to="/">Home</Link>
+      <Link to="/about">About Us</Link>
+      </nav>
+      
       <PizzaForm
         values={formValues}
         change={inputChange}
@@ -116,9 +121,11 @@ export default function App() {
         errors={formErrors}
       />
 
-   {pizzas.map((pizza) => {
-        return <Pizza key={pizza.id} details={pizza} />;
-      })}
+<Switch>
+  <Route path="/">
+  <Home />
+        </Route>
+      </Switch>
 </div>
  );
 }
