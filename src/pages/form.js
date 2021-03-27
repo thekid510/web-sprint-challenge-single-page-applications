@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function PizzaForm(props) {
-const {values, submit, change, disabled, errors} =props;
+const {values, submit, change, disabled, errors} = props;
 
 const onSubmit = (evt) => {
 evt.preventDefault();
@@ -24,7 +24,9 @@ return (
       <div>{errors.instructions}</div>
     </div>
  </div>
- <label>
+ <div className = "form-group inputs">
+    <h4> General info </h4>
+    <label>
     Special Instructions
     <input
         value={values.instructions}
@@ -34,7 +36,7 @@ return (
         />
  </label>
  <label>
-    Name&nsbp;
+    Name
     <input
         value={values.name}
         onChange={onChange}
@@ -50,10 +52,9 @@ return (
     <option value = "small">Small</option>
     <option value = "medium">medium</option>
     <option value = "large">large</option>
-
-
     </select>
- </label>
+  </label>
+ </div>
  <div className="form-group checkboxes">
     <h4>toppings</h4>
     <label>
@@ -92,9 +93,7 @@ return (
             onChange={onChange}
           />
         </label>
- </div>
-</form>
-
-
-)
+    </div>
+ </form>
+);
 }

@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { 
-   Route,
-   Switch,
-   Link,
-   Redirect
-} from "react-router-dom";
-
-//pages
-import MainPage from "./pages/index"
-import PizzaForm from "../src/pages/form"
+import Pizza from "./pizza"
+import PizzaForm from "./form"
 import schema from "../validation/formSchema";
 import axios from "axios";
 import * as yup from "yup";
@@ -34,14 +26,15 @@ const initialDisabled = true;
 
 export default function App() {
 
-  const [pizza, setPizza] = useState(initialPizzas); // array of Pizza objects
+  const [pizzas, setPizzas] = useState(initialPizzas); // array of Pizza objects
   const [formValues, setFormValues] = useState(initialFormValues); // object
   const [formErrors, setFormErrors] = useState(initialFormErrors); // object
   const [disabled, setDisabled] = useState(initialDisabled); // boolean
+
   const getPizzas = () => {
   
     axios
-      .get("http://buddies.com/api/Pizzas")
+      .get("https://reqres.in/pizzas")
       .then((res) => {
         setPizzas(res.data);
       })
@@ -53,9 +46,9 @@ export default function App() {
   const postNewPizza = (newPizza) => {
     
     axios
-      .post("http://buddies.com/api/Pizzas", newPizza)
+      .post("https://reqres.in/pizzas", newPizza)
       .then((res) => {
-        setPizzas([res.data, ...Pizzas]);
+        setPizzas([res.data, ...pizzas]);
         setFormValues(initialFormValues);
       })
       .catch((err) => {
@@ -89,9 +82,8 @@ export default function App() {
 
   const formSubmit = () => {
     const newPizza = {
-      username: formValues.name.trim(),
-      name: formValues.size.trim(),
-      size: formValues.toppings.trim(),
+      name: formValues.name.trim(),
+      size: formValues.size.trim(),
       instructions: formValues.instructions.trim(),
       toppings: ["pepperoni","mushroom","onions","sausage"].filter(
         (hobby) => formValues[hobby]
@@ -124,8 +116,9 @@ export default function App() {
         errors={formErrors}
       />
 
-  
-)
+   {pizzas.map((pizza) => {
+        return <Pizza key={pizza.id} details={pizza} />;
+      })}
 </div>
-)
+ );
 }
