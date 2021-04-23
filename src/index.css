@@ -43,7 +43,7 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: rgb(12, 45, 190);
+  color: black;
   font-weight: bold;
   margin-right: 8px;
 }
@@ -51,11 +51,11 @@ nav {
 
 
 .nav-links a.active {
-  border-bottom: 1px solid #1c5d76;
+  border-bottom: 2px solid #1c5d76;
 }
 
 .store-header {
-  color: rgb(12, 45, 190);
+  color: black;
 }
 
 .home-wrapper {
@@ -73,7 +73,7 @@ nav {
 .md-button.aboutUs-button{
   margin-top: -10px;
   width: 115px;
-  color: rgb(12, 45, 190);
+  color: black;
   padding: 5px;
 }
 

@@ -7,8 +7,8 @@ export default function Home(){
 
 const history = useHistory()
 
-    const routeToAboutUs = () => {
-    history.push('/about-us')
+    const routeToOrder = () => {
+    history.push('/order')
 }
 
 return (
@@ -18,8 +18,8 @@ return (
     alt="pizza"
     />
     <button className='md-button aboutUs-button'
-     onClick={routeToAboutUs}>
-     Learn About Us
+     onClick={routeToOrder}>
+     Order Here
     </button>
 </div>
 
