@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link, Switch, Router} from 'react-router-dom'
+import { Route, Link, Switch} from 'react-router-dom'
 
 // importing components
 import Home from './home'
