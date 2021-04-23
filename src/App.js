@@ -4,7 +4,7 @@ import { Route, Link, Switch} from 'react-router-dom'
 // importing components
 import Home from './home'
 import About from './about'
-
+import PizzaForm from "./orderForm"
 
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
       <About/>
       </Route>
       <Route path ='/order'>
-
+      <PizzaForm/>
       </Route>
       <Route path ='/'>
         <Home/>
