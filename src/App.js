@@ -4,12 +4,13 @@ import { Route, Link, Switch} from 'react-router-dom'
 // importing components
 import Home from './home'
 import About from './about'
-import PizzaForm from "./orderForm"
+import App from './orderForm'
+// import PizzaForm from "./src/orderForm"
+// import Form from "./values"
 
-
-const App = () => {
+const Apps = () => {
   return (
-    <div className='App'>
+    <div className='Apps'>
     <nav>
       <h1 className='store-header'>Lambda Eats</h1>
       <div className = "nav-links">
@@ -23,7 +24,7 @@ const App = () => {
       <About/>
       </Route>
       <Route path ='/order'>
-      <PizzaForm/>
+      <App/>
       </Route>
       <Route path ='/'>
         <Home/>
@@ -35,4 +36,4 @@ const App = () => {
 </div>
   );
 };
-export default App;
+export default Apps;
